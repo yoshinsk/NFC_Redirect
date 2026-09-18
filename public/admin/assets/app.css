@@ -1,0 +1,178 @@
+/*
+ * ファイル: public/admin/assets/app.css
+ * 機能: Bootstrapを基盤に、Noto Sans JPと明確なフォーカス・十分な操作領域を適用する管理画面スタイル。
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+:root {
+  --nfc-primary: #0a4f9e;
+  --nfc-primary-hover: #073a74;
+  --nfc-danger: #ad281f;
+  --nfc-text: #1b1b1b;
+  --nfc-border: #767676;
+  --nfc-surface: #f5f7fa;
+  --nfc-focus: #f5b700;
+}
+body {
+  color: var(--nfc-text);
+  background: var(--nfc-surface);
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.7;
+}
+
+.app-header { background: #fff; }
+
+.app-brand {
+  color: var(--nfc-text);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.app-brand:hover { color: var(--nfc-primary); }
+
+.content-heading {
+  align-items: end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.content-heading h1,
+.login-shell h1 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: .5rem;
+}
+
+.eyebrow {
+  color: var(--nfc-primary);
+  font-size: .875rem;
+  font-weight: 700;
+  margin-bottom: .25rem;
+}
+
+.card,
+.modal-content {
+  border-color: #b5b5b5;
+  border-radius: .5rem;
+  box-shadow: 0 .25rem .75rem rgb(0 0 0 / 8%);
+}
+
+.form-card { max-width: 54rem; }
+
+.login-shell {
+  background: #fff;
+  border: 1px solid #b5b5b5;
+  border-radius: .5rem;
+  box-shadow: 0 .25rem .75rem rgb(0 0 0 / 8%);
+  margin: 8vh auto;
+  max-width: 31rem;
+  padding: clamp(1.5rem, 5vw, 3rem);
+}
+
+.required,
+.form-error {
+  color: #a51d15;
+  font-weight: 700;
+}
+
+.form-error { margin: .5rem 0 0; }
+
+.form-control {
+  border-color: var(--nfc-border);
+  min-height: 3rem;
+}
+
+.btn {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  min-height: 2.75rem;
+}
+
+.btn-sm { min-height: 2.25rem; }
+
+.btn-primary {
+  --bs-btn-bg: var(--nfc-primary);
+  --bs-btn-border-color: var(--nfc-primary);
+  --bs-btn-hover-bg: var(--nfc-primary-hover);
+  --bs-btn-hover-border-color: var(--nfc-primary-hover);
+  --bs-btn-active-bg: var(--nfc-primary-hover);
+  --bs-btn-active-border-color: var(--nfc-primary-hover);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--nfc-primary);
+  --bs-btn-border-color: var(--nfc-primary);
+  --bs-btn-hover-bg: var(--nfc-primary);
+  --bs-btn-hover-border-color: var(--nfc-primary);
+}
+
+.btn-outline-danger,
+.btn-danger {
+  --bs-btn-color: var(--nfc-danger);
+  --bs-btn-border-color: var(--nfc-danger);
+  --bs-btn-hover-bg: var(--nfc-danger);
+  --bs-btn-hover-border-color: var(--nfc-danger);
+}
+
+.btn-danger {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--nfc-danger);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--nfc-focus);
+  outline-offset: 2px;
+}
+
+.nfc-url,
+.destination-cell,
+.user-agent-cell {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.nfc-url { color: #123b67; }
+
+.search-form {
+  display: flex;
+  gap: .5rem;
+  min-width: min(100%, 23rem);
+}
+
+.search-form .form-control { min-width: 0; }
+
+.table-scroll-shadow { box-shadow: inset -12px 0 8px -12px rgb(0 0 0 / 40%); }
+
+.table th {
+  background: #e7eef8;
+  border-bottom-width: 2px;
+  color: #1b3550;
+  white-space: nowrap;
+}
+
+.metadata {
+  background: #f3f4f6;
+  border: 1px solid #b5b5b5;
+  max-height: 22rem;
+  max-width: 38rem;
+  overflow: auto;
+  padding: .75rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+@media (max-width: 575.98px) {
+  .content-heading { align-items: stretch; }
+  .content-heading > .btn { width: 100%; }
+  .search-form { width: 100%; }
+  .app-header nav { width: 100%; }
+}

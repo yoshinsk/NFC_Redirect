@@ -1,0 +1,8 @@
+# ローカル・本番専用の機密情報。リポジトリには登録しない。
+/private/credentials.php
+/private/config.local.php
+/.env
+
+# 開発ツールの生成物
+/test-results/
+/playwright-report/
